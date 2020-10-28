@@ -1,4 +1,5 @@
 import 'package:bookbarber/themes/default_theme.dart';
+import 'package:bookbarber/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -75,6 +76,7 @@ class LoginScreen extends StatelessWidget {
                               color: DefaultTheme.lightTheme.iconTheme.color),
                         ),
                       ),
+                      obscureText: true,
                     ),
                   ),
                   Container(
@@ -83,7 +85,8 @@ class LoginScreen extends StatelessWidget {
                     child: FlatButton(
                       padding: EdgeInsets.symmetric(
                           horizontal: 50.0, vertical: 10.0),
-                      onPressed: () => print('hello'),
+                      onPressed: () =>
+                          Navigator.pushNamed(context, AppRoutes.LOGIN_HOME),
                       color: DefaultTheme.lightTheme.iconTheme.color,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),

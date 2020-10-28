@@ -49,12 +49,11 @@ flutter:
     - assets/images/logo.png
     - assets/images/barber_art.png
     - assets/images/ball_background.png
-  #   - images/a_dot_ham.jpeg
-  assets:
-    - assets/images/1.png
-    - assets/images/2.png
-    - assets/images/3.png
-    - assets/images/4.png
+    - assets/images/ball_background1.png
+    - assets/images/corte.png
+    - assets/images/barba.png
+    - assets/images/customizado.png
+    - assets/images/tratamento.png
     - assets/images/Lupa.png
     - assets/images/Pesquisa.png
 
