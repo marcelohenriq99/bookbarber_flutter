@@ -1,3 +1,4 @@
+import 'package:bookbarber/services/encrypt_decrypt_service.dart';
 import 'package:bookbarber/themes/default_theme.dart';
 import 'package:bookbarber/utils/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -84,8 +85,10 @@ class LoginScreen extends StatelessWidget {
                     child: FlatButton(
                       padding: EdgeInsets.symmetric(
                           horizontal: 50.0, vertical: 10.0),
-                      onPressed: () => Navigator.pushReplacementNamed(
-                          context, AppRoutes.HOME_ROUTE),
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                            context, AppRoutes.HOME_ROUTE);
+                      },
                       color: DefaultTheme.lightTheme.iconTheme.color,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
