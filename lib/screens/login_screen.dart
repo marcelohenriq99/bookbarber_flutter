@@ -77,6 +77,7 @@ class LoginScreen extends StatelessWidget {
                               color: DefaultTheme.lightTheme.iconTheme.color),
                         ),
                       ),
+                      obscureText: true,
                     ),
                   ),
                   Container(

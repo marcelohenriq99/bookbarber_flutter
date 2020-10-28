@@ -1,5 +1,9 @@
 import 'package:bookbarber/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:bookbarber/themes/default_theme.dart';
+import 'package:bookbarber/utils/app_routes.dart';
+import 'package:bookbarber/screens/login_screen.dart';
+import 'package:bookbarber/screens/splash_screen.dart';
 
 //themes
 import './themes/default_theme.dart';
@@ -17,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: DefaultTheme.lightTheme,
       initialRoute: AppRoutes.MAIN_ROUTE,
