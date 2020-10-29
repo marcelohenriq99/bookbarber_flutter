@@ -83,12 +83,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             ServiceItem(
-                              imageIcon: "assets/images/1.png",
-                              label: "Chegamos",
+                              imageIcon: "assets/images/corte.png",
+                              label: "Corte",
                             ),
                             ServiceItem(
-                              imageIcon: "assets/images/2.png",
-                              label: "Nave",
+                              imageIcon: "assets/images/barba.png",
+                              label: "Barba",
                             ),
                           ],
                         ),
@@ -99,12 +99,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             ServiceItem(
-                              imageIcon: "assets/images/3.png",
-                              label: "Satelite",
+                              imageIcon: "assets/images/tratamento.png",
+                              label: "Tratamento",
                             ),
                             ServiceItem(
-                              imageIcon: "assets/images/4.png",
-                              label: "Lancamento",
+                              imageIcon: "assets/images/customizado.png",
+                              label: "Customizado",
                             ),
                           ],
                         ),
