@@ -1,9 +1,26 @@
-import 'package:bookbarber/services/encrypt_decrypt_service.dart';
+import 'package:bookbarber/providers/user_provider.dart';
 import 'package:bookbarber/themes/default_theme.dart';
 import 'package:bookbarber/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  //attrs
+  final void Function(String, String) signUser;
+
+  LoginScreen(this.signUser);
+
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  bool _emailValidate = false;
+  bool _passwordValidate = false;
+  String _emailValidateMessage = 'Email can not be empty';
+  String _passwordValidateMessage = 'Password can not be empty';
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -24,7 +41,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(30.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -42,10 +59,13 @@ class LoginScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 5.0, vertical: 20.0),
                     child: TextField(
+                      controller: _emailController,
                       style: TextStyle(color: Colors.white60),
                       cursorColor: DefaultTheme.lightTheme.iconTheme.color,
                       decoration: InputDecoration(
-                        labelText: 'Username',
+                        errorText:
+                            _emailValidate ? _emailValidateMessage : null,
+                        labelText: 'Email',
                         labelStyle: DefaultTheme.lightTheme.textTheme.headline3,
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
@@ -62,10 +82,13 @@ class LoginScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 5.0, vertical: 20.0),
                     child: TextField(
+                      controller: _passwordController,
                       style: TextStyle(color: Colors.white60),
                       keyboardType: TextInputType.visiblePassword,
                       cursorColor: DefaultTheme.lightTheme.iconTheme.color,
                       decoration: InputDecoration(
+                        errorText:
+                            _passwordValidate ? _passwordValidateMessage : null,
                         labelText: 'password',
                         labelStyle: DefaultTheme.lightTheme.textTheme.headline3,
                         enabledBorder: UnderlineInputBorder(
@@ -86,8 +109,28 @@ class LoginScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: 50.0, vertical: 10.0),
                       onPressed: () {
-                        Navigator.pushReplacementNamed(
-                            context, AppRoutes.HOME_ROUTE);
+                        if (_emailController.text.isNotEmpty &&
+                            _passwordController.text.isNotEmpty) {
+                          setState(() {
+                            _emailValidate = false;
+                            _passwordValidate = false;
+                          });
+                          widget.signUser(
+                              _emailController.text, _passwordController.text);
+                          UserProvider.of(context).currentUser != null
+                              ? Navigator.pushReplacementNamed(
+                                  context, AppRoutes.HOME_ROUTE)
+                              : false;
+                          // setState(() {
+                          //     _emailValidateMessage = 'Wrong email';
+                          //     _passwordValidateMessage = 'Wrong password';
+                          //   })
+                        } else {
+                          setState(() {
+                            _emailValidate = true;
+                            _passwordValidate = true;
+                          });
+                        }
                       },
                       color: DefaultTheme.lightTheme.iconTheme.color,
                       shape: RoundedRectangleBorder(
