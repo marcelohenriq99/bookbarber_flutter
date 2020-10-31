@@ -100,6 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: DefaultTheme.lightTheme.iconTheme.color),
                         ),
                       ),
+                      obscureText: true,
                     ),
                   ),
                   Container(
