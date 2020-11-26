@@ -1,4 +1,8 @@
+import 'package:bookbarber/screens/barba.dart';
+import 'package:bookbarber/screens/corte.dart';
+import 'package:bookbarber/screens/customizacao.dart';
 import 'package:bookbarber/screens/home_screen.dart';
+import 'package:bookbarber/screens/tratamentos.dart';
 import 'package:flutter/material.dart';
 import 'package:bookbarber/themes/default_theme.dart';
 import 'package:bookbarber/utils/app_routes.dart';
@@ -29,6 +33,10 @@ class MyApp extends StatelessWidget {
         AppRoutes.MAIN_ROUTE: (context) => SplashScreen(),
         AppRoutes.LOGIN_ROUTE: (context) => LoginScreen(),
         AppRoutes.HOME_ROUTE: (context) => HomeScreen(),
+        AppRoutes.CORTE_ROUTE: (context) => Corte(),
+        AppRoutes.BIGODE_ROUTE: (context) => Bigode(),
+        AppRoutes.TRATAMENTO_ROUTE: (context) => Treatamento(),
+        AppRoutes.CUSTOMIZACAO_ROUTE: (context) => Customizacao(),
       },
     );
   }

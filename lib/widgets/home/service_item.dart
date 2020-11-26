@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class ServiceItem extends StatelessWidget {
   final String imageIcon;
   final String label;
+  Function funcao;
 
-  ServiceItem({this.imageIcon, this.label});
+  ServiceItem({this.imageIcon, this.label, this.funcao});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +23,13 @@ class ServiceItem extends StatelessWidget {
         color: DefaultTheme.lightTheme.colorScheme.secondary,
         child: InkWell(
           borderRadius: BorderRadius.circular(20.0),
-          onTap: () => false,
+          onTap: funcao,
           //splashColor: Colors.redAccent,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 50),
+                padding: EdgeInsets.only(left: 50, top: 5, right: 10),
                 child: Image.asset(
                   imageIcon,
                   height: 100,
@@ -35,7 +37,7 @@ class ServiceItem extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20, right: 50),
+                padding: EdgeInsets.only(top: 15, left: 10),
                 child: Text(
                   label,
                   style: TextStyle(
