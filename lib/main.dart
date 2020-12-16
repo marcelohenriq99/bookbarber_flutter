@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import 'package:bookbarber/models/user.dart';
 import 'package:bookbarber/providers/user_provider.dart';
+=======
+import 'package:bookbarber/screens/barba.dart';
+import 'package:bookbarber/screens/corte.dart';
+import 'package:bookbarber/screens/customizacao.dart';
+>>>>>>> 1549482f38717dcfe35ee4d8cc50a96e05a7797c
 import 'package:bookbarber/screens/home_screen.dart';
+import 'package:bookbarber/screens/tratamentos.dart';
 import 'package:flutter/material.dart';
 import 'package:bookbarber/themes/default_theme.dart';
 import 'package:bookbarber/utils/app_routes.dart';
@@ -56,6 +63,10 @@ class _MyAppState extends State<MyApp> {
         AppRoutes.MAIN_ROUTE: (context) => SplashScreen(),
         AppRoutes.LOGIN_ROUTE: (context) => LoginScreen(),
         AppRoutes.HOME_ROUTE: (context) => HomeScreen(),
+        AppRoutes.CORTE_ROUTE: (context) => Corte(),
+        AppRoutes.BIGODE_ROUTE: (context) => Bigode(),
+        AppRoutes.TRATAMENTO_ROUTE: (context) => Treatamento(),
+        AppRoutes.CUSTOMIZACAO_ROUTE: (context) => Customizacao(),
       },
 =======
     return UserProvider(

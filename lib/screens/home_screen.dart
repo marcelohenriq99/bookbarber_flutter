@@ -1,6 +1,7 @@
 import 'package:bookbarber/models/user.dart';
 import 'package:bookbarber/providers/user_provider.dart';
 import 'package:bookbarber/themes/default_theme.dart';
+import 'package:bookbarber/utils/app_routes.dart';
 import 'package:bookbarber/widgets/home/service_item.dart';
 import 'package:flutter/material.dart';
 
@@ -88,12 +89,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             ServiceItem(
-                              imageIcon: "assets/images/1.png",
-                              label: "Chegamos",
+                              imageIcon: "assets/images/corte.png",
+                              label: "Corte",
+                              funcao: () {
+                                Navigator.pushReplacementNamed(
+                                    context, AppRoutes.CORTE_ROUTE);
+                              },
                             ),
                             ServiceItem(
-                              imageIcon: "assets/images/2.png",
-                              label: "Nave",
+                              imageIcon: "assets/images/barba.png",
+                              label: "Barba",
+                              funcao: () {
+                                Navigator.pushReplacementNamed(
+                                    context, AppRoutes.BIGODE_ROUTE);
+                              },
                             ),
                           ],
                         ),
@@ -104,12 +113,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             ServiceItem(
-                              imageIcon: "assets/images/3.png",
-                              label: "Satelite",
+                              imageIcon: "assets/images/tratamento.png",
+                              label: "Tratamento",
+                              funcao: () {
+                                Navigator.pushReplacementNamed(
+                                    context, AppRoutes.TRATAMENTO_ROUTE);
+                              },
                             ),
                             ServiceItem(
-                              imageIcon: "assets/images/4.png",
-                              label: "Lancamento",
+                              imageIcon: "assets/images/customizado.png",
+                              label: "Customizado",
+                              funcao: () {
+                                Navigator.pushReplacementNamed(
+                                    context, AppRoutes.CUSTOMIZACAO_ROUTE);
+                              },
                             ),
                           ],
                         ),
