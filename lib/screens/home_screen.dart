@@ -1,3 +1,5 @@
+import 'package:bookbarber/models/user.dart';
+import 'package:bookbarber/providers/user_provider.dart';
 import 'package:bookbarber/themes/default_theme.dart';
 import 'package:bookbarber/widgets/home/service_item.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +10,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  User _currentUser;
   @override
   Widget build(BuildContext context) {
+    _currentUser = UserProvider.of(context).currentUser;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -55,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Text(
-                        "Derek",
+                        _currentUser.firstName,
                         style: TextStyle(
                             fontSize: 45,
                             color: Colors.blueGrey[400],
